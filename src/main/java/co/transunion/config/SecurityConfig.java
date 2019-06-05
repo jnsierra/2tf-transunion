@@ -21,8 +21,8 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
    
    @Autowired
    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-       auth.inMemoryAuthentication().withUser("admin").password("{noop}experianservices").roles("ADMIN");
-       auth.inMemoryAuthentication().withUser("experian").password("{noop}experianservices").roles("USER");
+       auth.inMemoryAuthentication().withUser("admin").password("{noop}2tfservices").roles("ADMIN");
+       auth.inMemoryAuthentication().withUser("2tf").password("{noop}2tfservices").roles("USER");
    }
    
    @Override

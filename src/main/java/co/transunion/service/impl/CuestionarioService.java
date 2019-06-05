@@ -21,10 +21,7 @@ public class CuestionarioService implements ICuestionarioService {
 	
 	@PostConstruct
 	public void init() {
-//		System.setProperty("javax.net.ssl.keyStore", "C:/certificados/transunion/cacerts");
-//        System.setProperty("javax.net.ssl.keyStorePassword", "chageit");
-//        System.setProperty("javax.net.ssl.trustStore", "C:/certificados/transunion/cacerts");
-//        System.setProperty("javax.net.ssl.trustStorePassword", "chageit");
+
 	}
 
 	@Override
