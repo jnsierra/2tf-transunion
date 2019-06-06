@@ -23,10 +23,6 @@ public class CuestionarioController {
 	@Autowired
 	ICuestionarioService cuestionarioService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getTest() {
-		return new ResponseEntity<String>("Hola", HttpStatus.OK);
-	}
 
 	@RequestMapping(value = "/getCuestionario/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ResponseRestService<CuestionarioULTRADTO>> obtenerCuenstionario(
