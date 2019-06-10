@@ -1,5 +1,6 @@
 package co.transunion.service;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 
 import org.json.JSONException;
@@ -16,5 +17,5 @@ public interface IComercialInformationService {
 	 * @param stub
 	 * @return json response
 	 */
-	String	getComercialInformation(ParametrosConsultaDTO parameters, SecurityDto security) throws RemoteException,JSONException;
+	String	getComercialInformation(ParametrosConsultaDTO parameters, SecurityDto security) throws RemoteException,JSONException,IOException;
 }

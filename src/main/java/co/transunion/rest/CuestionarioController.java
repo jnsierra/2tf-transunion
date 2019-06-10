@@ -1,5 +1,6 @@
 package co.transunion.rest;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class CuestionarioController {
 
 	@RequestMapping(value = "/getCuestionario/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ResponseRestService<CuestionarioULTRADTO>> obtenerCuenstionario(
-			@RequestBody() CuestionarioDtoWrapper cuestionario) throws RemoteException {
+			@RequestBody() CuestionarioDtoWrapper cuestionario) throws IOException {
 		CuestionarioULTRADTO cuestionarioResp = cuestionarioService.getCuestionario(cuestionario.getParametrosULTRA(),
 				cuestionario.getParametrosSeguridadULTRA());
 		return new ResponseEntity<>(new ResponseRestService<>(cuestionarioResp), HttpStatus.OK);

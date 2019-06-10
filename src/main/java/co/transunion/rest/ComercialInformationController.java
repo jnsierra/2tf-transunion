@@ -1,5 +1,6 @@
 package co.transunion.rest;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 
 import org.json.JSONException;
@@ -24,7 +25,7 @@ public class ComercialInformationController {
 	IComercialInformationService service;
 	
 	@RequestMapping(value = "/getComercialInformation/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ResponseRestService<String>> getComercialInformation(@RequestBody() ComercialInformationDtoWrapper comercialInformation) throws RemoteException,JSONException{
+	public ResponseEntity<ResponseRestService<String>> getComercialInformation(@RequestBody() ComercialInformationDtoWrapper comercialInformation) throws JSONException, IOException{
 		String response = service.getComercialInformation(comercialInformation.getParameters(), comercialInformation.getSecurity());
 		return new ResponseEntity<>(new ResponseRestService<>(response), HttpStatus.OK);
 	}

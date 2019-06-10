@@ -1,5 +1,6 @@
 package co.transunion.service;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 
 import co.cifin.confrontaultra.dto.ultra.CuestionarioULTRADTO;
@@ -13,6 +14,6 @@ public interface ICuestionarioService {
 	 * @param security
 	 * @return
 	 */
-	CuestionarioULTRADTO getCuestionario(ParametrosULTRADTO parametros, ParametrosSeguridadULTRADTO security)throws RemoteException;
+	CuestionarioULTRADTO getCuestionario(ParametrosULTRADTO parametros, ParametrosSeguridadULTRADTO security)throws RemoteException,IOException;
 
 }

@@ -1,5 +1,10 @@
 package co.transunion.service.impl;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.rmi.RemoteException;
 
 import javax.annotation.PostConstruct;
@@ -24,8 +29,19 @@ public class CuestionarioService implements ICuestionarioService {
 		
 	}
 
-	@Override
-	public CuestionarioULTRADTO getCuestionario(ParametrosULTRADTO parametros, ParametrosSeguridadULTRADTO security) throws RemoteException {
+	@Override	
+	public CuestionarioULTRADTO getCuestionario(ParametrosULTRADTO parametros, ParametrosSeguridadULTRADTO security)
+			throws IOException {
+		File first = new File("src/main/resources/client-config.wsdd");
+		if (first.delete()) {
+			System.out.println("File deleted successfully");
+		} else {
+			System.out.println("Failed to delete the file");
+		}
+				File source = new File("src/main/resources/one-client-config.wsdd");
+        File dest = new File("src/main/resources/client-config.wsdd");
+        
+        Files.copy(new File(source.getAbsolutePath()).toPath(), new File(dest.getAbsolutePath()).toPath());
 		return confrontaUltraWSSoapBindingStub.obtenerCuestionario(security, parametros);
 	}
 
